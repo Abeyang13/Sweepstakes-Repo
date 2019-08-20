@@ -8,39 +8,35 @@ namespace SweepStakes
 {
     class Sweepstakes
     {
-        
+        public string name;
+        private string winner;
+        private Dictionary<int,Contestant> contestInfo = new Dictionary<int,Contestant>();
+        Random random;
 
-
-
+        public Sweepstakes(Random random, string name)
+        {
+            this.random = random;
+            this.name = name;
+        }
 
 
 
         public void RegisterContestant(Contestant contestant)
         {
             User_Interface.GetContestantInformation(contestant);
-        }
-        public void PrintContestantInfo(Contestant contestant)
-        {
-            User_Interface.GetContestantInformation(contestant);
+            contestInfo.Add(contestant.registrationNumber, contestant);
+
         }
         public string PickWinner()
         {
-
+            Random rng = new Random();
+            string win = contestInfo[rng.Next(contestInfo.Count)].ToString();
+            winner = win;
+            return winner;
         }
-        public void DisplayEmployeeIdName()
+        public void PrintContestantInfo(Contestant contestant)
         {
-            Dictionary<int, string> employees = new Dictionary<int, string>();
-            employees.Add(1337, "Terrill");
-            employees.Add(1234, "Heinisch");
-            employees.Add(9541, "Carlson");
-
-            Console.Write("Enter an employee name: ");
-            string value = Console.ReadLine();
-            foreach (KeyValuePair<int, string> employee in employees)
-            {
-                if (employee.Value == value)
-                    Console.WriteLine($"Employee ID: {employee.Key} Employee Name: {employee.Value}");
-            }
+            Console.WriteLine(winner);
         }
     }
 }
