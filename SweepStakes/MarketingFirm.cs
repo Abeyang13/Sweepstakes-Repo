@@ -20,10 +20,5 @@ namespace SweepStakes
         {
             sweepstakesManager.InsertSweepStakes(new Sweepstakes(new Random(), "Test Sweepstakes"));
         }
-
-
-
-
-
     }
 }

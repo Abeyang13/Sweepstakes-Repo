@@ -16,7 +16,6 @@ namespace SweepStakes
         public Sweepstakes GetSweepstakes()
         {
             return sweepstakesQueue.Dequeue();
-
         }
     }
 }

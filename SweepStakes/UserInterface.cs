@@ -34,10 +34,10 @@ namespace SweepStakes
             int.TryParse(Console.ReadLine(), out registrationNumber);
             return registrationNumber;
         }
-        public static string AskThing()
+        public static string AskForManager()
         {
-            Console.WriteLine("Stack Or Queue");
-            return Console.ReadLine();
+            Console.WriteLine("Did you want to run a Stack Or Queue for managing your Sweepstakes?  Please input Stack or Queue");
+            return Console.ReadLine().ToLower();
         }
     }
 }
