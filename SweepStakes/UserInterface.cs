@@ -9,16 +9,35 @@ namespace SweepStakes
     static class User_Interface
     {
 
-        public static void GetContestantInformation(Contestant contestant)
+        public static string GetContestantFirstName()
         {
             Console.WriteLine("Please enter your first name");
-            contestant.firstName = Console.ReadLine();
+            string firstName = Console.ReadLine();
+            return firstName;
+        }
+        public static string GetContestantLastName()
+        {
             Console.WriteLine("Please enter your last name");
-            contestant.lastName = Console.ReadLine();
+            string lastName = Console.ReadLine();
+            return lastName;
+        }
+        public static string GetContestantEmail()
+        {
             Console.WriteLine("Please enter your email address");
-            contestant.email = Console.ReadLine();
+            string email = Console.ReadLine();
+            return email;
+        }
+        public static int GetContestantRegistrationNumber()
+        { 
             Console.WriteLine("Please enter your registration number(Numbers Only)");
-            int.TryParse(Console.ReadLine(), out contestant.registrationNumber);
+            int registrationNumber;
+            int.TryParse(Console.ReadLine(), out registrationNumber);
+            return registrationNumber;
+        }
+        public static string AskThing()
+        {
+            Console.WriteLine("Stack Or Queue");
+            return Console.ReadLine();
         }
     }
 }

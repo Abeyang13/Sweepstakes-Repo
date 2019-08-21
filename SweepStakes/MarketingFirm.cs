@@ -6,16 +6,20 @@ using System.Threading.Tasks;
 
 namespace SweepStakes
 {
-    class MarketingFirm
+    public class MarketingFirm
     {
+        ISweepstakesManager sweepstakesManager;
 
 
+        public MarketingFirm(ISweepstakesManager manager)
+        {
+            sweepstakesManager = manager;
+        }
 
-        // Run contest
-        // Ask Sweepstakes class to ask for registration 
-        // Use Ifactory design pattern to see how user wants manage sweepstakes objects
-        // Then use sweepstakes class to select winner and then printout contestant info
-
+        public void Runcontest()
+        {
+            sweepstakesManager.InsertSweepStakes(new Sweepstakes(new Random(), "Test Sweepstakes"));
+        }
 
 
 
