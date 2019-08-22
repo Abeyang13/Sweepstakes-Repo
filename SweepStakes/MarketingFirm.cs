@@ -11,14 +11,13 @@ namespace SweepStakes
         ISweepstakesManager sweepstakesManager;
 
 
-        public MarketingFirm(ISweepstakesManager manager)
+        public MarketingFirm()
         {
-            sweepstakesManager = manager;
+            sweepstakesManager = ValueOfManager();
         }
-
-        public void Runcontest()
-        {
-            sweepstakesManager.InsertSweepStakes(new Sweepstakes(new Random(), "Test Sweepstakes"));
+        public ISweepstakesManager ValueOfManager()
+        {           
+            return FactoryManager.PickManager(User_Interface.AskForManager());       
         }
     }
 }

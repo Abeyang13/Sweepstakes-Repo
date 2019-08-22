@@ -10,8 +10,9 @@ namespace SweepStakes
     {
         static void Main(string[] args)
         {
-            ISweepstakesManager manager = FactoryManager.PickManager(User_Interface.AskThing());
-            MarketingFirm thing = new MarketingFirm(manager);           
+            MarketingFirm thing = new MarketingFirm();
         }
+
+       
     }
 }

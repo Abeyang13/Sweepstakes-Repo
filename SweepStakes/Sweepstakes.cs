@@ -9,7 +9,6 @@ namespace SweepStakes
     public class Sweepstakes
     { 
         public string name;
-        private string winner;
         private Dictionary<int,Contestant> contestInfo = new Dictionary<int,Contestant>();
         Random random;
 

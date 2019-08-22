@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SweepStakes
 {
     static class FactoryManager
-    { 
+    {
         public static ISweepstakesManager PickManager(string manager)
         {
             ISweepstakesManager user = null;
@@ -20,12 +20,9 @@ namespace SweepStakes
                     user = new SweepstakesQueueManager();
                     break;
                 default:
-                    Console.WriteLine("Not a valid manager");
-                    PickManager(manager);
-                    break;
+                    return PickManager(User_Interface.AskForManager()); ;
             }
             return user;
         }
-
     }
 }
